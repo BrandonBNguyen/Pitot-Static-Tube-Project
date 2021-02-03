@@ -11,7 +11,7 @@ This is an on-going project to design and develop an instrument capable of acqui
 	 - [x] Display ([UCTRONICS 0.96 Inch OLED Module](https://www.amazon.com/gp/product/B072Q2X2LL/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1))
 	 - [x] Microcontroller ([Teensy LC Board](https://www.pjrc.com/teensy/teensyLC.html))
 	 - [x] Nozzle-to-sensor tubing ([4 mm OD pneumatic hose](https://www.amazon.com/gp/product/B07H87S1ZW/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1))
-	 - [ ] Power source
+	 - [x] Power source (USB A to microUSB cable)
  - [ ] Develop CAD Model
 	 - [x] Pitot static tube nozzle assembly
 	 - [ ] Housing assembly for microcontroller and pressure sensors
