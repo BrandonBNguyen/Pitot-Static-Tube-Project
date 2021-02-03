@@ -6,7 +6,7 @@ This is an on-going project to design and develop an instrument capable of acqui
 
 ## To Do List
 
- - [ ] Select and order components
+ - [x] Select and order components
 	 - [x] Pressure sensors ([BMP180](https://www.amazon.com/gp/product/B07Q3PQ81R/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1))
 	 - [x] Display ([UCTRONICS 0.96 Inch OLED Module](https://www.amazon.com/gp/product/B072Q2X2LL/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1))
 	 - [x] Microcontroller ([Teensy LC Board](https://www.pjrc.com/teensy/teensyLC.html))
