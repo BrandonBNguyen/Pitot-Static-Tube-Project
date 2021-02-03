@@ -17,7 +17,7 @@ This is an on-going project to design and develop an instrument capable of acqui
 	 - [ ] Housing assembly for microcontroller and pressure sensors
  - [ ] Test Electronics
 	 - [x] Get pressure readings from single BMP 180
-	 - [ ] Get pressure readings from both BMP 180 sensors simultaneously.
+	 - [x] Get pressure readings from both BMP 180 sensors simultaneously.
 	 - [ ] Display pressure measurements and air speed reading to OLED display.
  - [ ] Manufacture Components
 	 - [x] 3D print nozzle assembly
