@@ -6,19 +6,19 @@ This is an on-going project to design and develop an instrument capable of acqui
 
 ## To Do List
 
- - [ ] Select and order components
+ - [x] Select and order components
 	 - [x] Pressure sensors ([BMP180](https://www.amazon.com/gp/product/B07Q3PQ81R/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1))
 	 - [x] Display ([UCTRONICS 0.96 Inch OLED Module](https://www.amazon.com/gp/product/B072Q2X2LL/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1))
 	 - [x] Microcontroller ([Teensy LC Board](https://www.pjrc.com/teensy/teensyLC.html))
 	 - [x] Nozzle-to-sensor tubing ([4 mm OD pneumatic hose](https://www.amazon.com/gp/product/B07H87S1ZW/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1))
-	 - [ ] Power source
+	 - [x] Power source (USB A to microUSB cable)
  - [ ] Develop CAD Model
 	 - [x] Pitot static tube nozzle assembly
 	 - [ ] Housing assembly for microcontroller and pressure sensors
- - [ ] Test Electronics
+ - [x] Test Electronics
 	 - [x] Get pressure readings from single BMP 180
-	 - [ ] Get pressure readings from both BMP 180 sensors simultaneously.
-	 - [ ] Display pressure measurements and air speed reading to OLED display.
+	 - [x] Get pressure readings from both BMP 180 sensors simultaneously.
+	 - [x] Display pressure measurements and air speed reading to OLED display.
  - [ ] Manufacture Components
 	 - [x] 3D print nozzle assembly
 	 - [ ] 3D print housing assembly
@@ -110,6 +110,14 @@ The nozzle support was printed successfully on the first attempt. The rail fit o
 ### Shared I2C Address
 
 A major technical problem that arose while testing the sensors was the fact that the sensors share the same I2C address. An attempted solution involved using the Arduino Uno's hardware I2C bus to measure the result from one sensor and a software I2C bus to measure the result from the other, although implementation of this solution was unsuccessful. Another solution considered was using a multiplexer to facilitate the communication between the Arduino and devices sharing I2C addresses, although this would require additional space in the housing for another component. The solution reached was to use a microcontroller that has two I2C buses such that each sensor would be on a separate I2C bus.
+
+### Measuring from 2 BMP180 Sensors
+
+The [SparkFun BMP180](https://github.com/sparkfun/BMP180_Breakout_Arduino_Library) library was designed to read the pressure and temperature from a single BMP180 sensor on the default I2C bus. To measure the pressure from 2 BMP180 sensors, one on the default I2C bus and the other on the second, the library had to be modified to use the `i2c_t3.h` library instead of the `Wire.h` library. Then, that library was duplicated and modified to use `Wire1` instead of `Wire` to access the BMP180 sensor on the second I2C bus. One library with the original `Wire` was used to measure the pressure from the sensor on the default I2C bus and the other with `Wire1` was used to measure the sensor on the secondary I2C bus.
+
+### Integrating SSD1306 OLED Panel
+
+The [Adafruit SSD1306 library](https://github.com/adafruit/Adafruit_SSD1306), [GFX library](https://github.com/adafruit/Adafruit-GFX-Library), and [BusIO library](https://github.com/adafruit/Adafruit_BusIO) were used to display text and readings to the OLED display. Since the `i2c_t3.h` library was being used to measure the pressure from the sensors, `Wire.h` could not be used to display text and readings and the above libraries had to be changed to use the `i2c_t3.h` library instead of `Wire.h`. Additionally, all instances of `TwoWire` had to be changed to `i2c_t3`.
 
 ## Skills Demonstrated
 
