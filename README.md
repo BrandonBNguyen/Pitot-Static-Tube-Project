@@ -119,6 +119,8 @@ The [SparkFun BMP180](https://github.com/sparkfun/BMP180_Breakout_Arduino_Librar
 
 The [Adafruit SSD1306 library](https://github.com/adafruit/Adafruit_SSD1306), [GFX library](https://github.com/adafruit/Adafruit-GFX-Library), and [BusIO library](https://github.com/adafruit/Adafruit_BusIO) were used to display text and readings to the OLED display. Since the `i2c_t3.h` library was being used to measure the pressure from the sensors, `Wire.h` could not be used to display text and readings and the above libraries had to be changed to use the `i2c_t3.h` library instead of `Wire.h`. Additionally, all instances of `TwoWire` had to be changed to `i2c_t3`.
 
+![Successful test showing calculated airspeed displayed on panel from pressure sensors.](https://github.com/BrandonBNguyen/Pitot-Static-Tube-Project/blob/master/Images/panel_test.gif)
+
 ## Skills Demonstrated
 
  - Demonstrated strong computer-aided design skills using SolidWorks in working with multiple parts in assemblies and designing custom parts for electronic components.
