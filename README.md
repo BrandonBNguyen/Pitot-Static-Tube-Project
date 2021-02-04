@@ -111,6 +111,10 @@ The nozzle support was printed successfully on the first attempt. The rail fit o
 
 A major technical problem that arose while testing the sensors was the fact that the sensors share the same I2C address. An attempted solution involved using the Arduino Uno's hardware I2C bus to measure the result from one sensor and a software I2C bus to measure the result from the other, although implementation of this solution was unsuccessful. Another solution considered was using a multiplexer to facilitate the communication between the Arduino and devices sharing I2C addresses, although this would require additional space in the housing for another component. The solution reached was to use a microcontroller that has two I2C buses such that each sensor would be on a separate I2C bus.
 
+### Measuring from 2 BMP180 Sensors
+
+The [SparkFun BMP180](https://github.com/sparkfun/BMP180_Breakout_Arduino_Library) library was designed to read the pressure and temperature from a single BMP180 sensor on the default I2C bus. To measure the pressure from 2 BMP180 sensors, one on the default I2C bus and the other on the second, the library had to be modified to use the `i2c_t3.h` library instead of the `Wire.h` library. Then, that library was duplicated and modified to use `Wire1` instead of `Wire` to access the BMP180 sensor on the second I2C bus. One library with the original `Wire` was used to measure the pressure from the sensor on the default I2C bus and the other with `Wire1` was used to measure the sensor on the secondary I2C bus.
+
 ## Skills Demonstrated
 
  - Demonstrated strong computer-aided design skills using SolidWorks in working with multiple parts in assemblies and designing custom parts for electronic components.
