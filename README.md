@@ -15,10 +15,10 @@ This is an on-going project to design and develop an instrument capable of acqui
  - [ ] Develop CAD Model
 	 - [x] Pitot static tube nozzle assembly
 	 - [ ] Housing assembly for microcontroller and pressure sensors
- - [ ] Test Electronics
+ - [x] Test Electronics
 	 - [x] Get pressure readings from single BMP 180
 	 - [x] Get pressure readings from both BMP 180 sensors simultaneously.
-	 - [ ] Display pressure measurements and air speed reading to OLED display.
+	 - [x] Display pressure measurements and air speed reading to OLED display.
  - [ ] Manufacture Components
 	 - [x] 3D print nozzle assembly
 	 - [ ] 3D print housing assembly
