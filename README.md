@@ -12,9 +12,9 @@ This is an on-going project to design and develop an instrument capable of acqui
 	 - [x] Microcontroller ([Teensy LC Board](https://www.pjrc.com/teensy/teensyLC.html))
 	 - [x] Nozzle-to-sensor tubing ([4 mm OD pneumatic hose](https://www.amazon.com/gp/product/B07H87S1ZW/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1))
 	 - [x] Power source (USB A to microUSB cable)
- - [ ] Develop CAD Model
+ - [x] Develop CAD Model
 	 - [x] Pitot static tube nozzle assembly
-	 - [ ] Housing assembly for microcontroller and pressure sensors
+	 - [x] Housing assembly for microcontroller and pressure sensors
  - [x] Test Electronics
 	 - [x] Get pressure readings from single BMP 180
 	 - [x] Get pressure readings from both BMP 180 sensors simultaneously.
