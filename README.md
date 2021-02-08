@@ -74,6 +74,7 @@ The main nozzle has a hole in the front which will be connected to a pressure se
 *Section view of the nozzle showing internal paths to the front and top of the nozzle to measure stagnation pressure and static pressure, respectively.*
 
 ![Underside View](https://raw.githubusercontent.com/BrandonBNguyen/Pitot-Static-Tube-Project/master/Images/PitotTubeNozzle_Underside.PNG)
+
 *Underside view of the nozzle showing the dovetail slot to connect to the support.*
 
 #### Support
@@ -81,6 +82,7 @@ The main nozzle has a hole in the front which will be connected to a pressure se
 The support features a dovetail at one end and a flat edge on the other for which to connect a clamp to hold the entire assembly in place. The support is designed in this way to place the nozzle far out in front and away from the vehicle to ensure that the instrument is not measuring reduced air speeds due to air being slowed by the boundary layer of the vehicle.
 
 ![Support rear view](https://raw.githubusercontent.com/BrandonBNguyen/Pitot-Static-Tube-Project/master/Images/Support_Rear.PNG)
+
 *Rear view of the support showing the dovetail rail on top and the flat edge on the bottom to be clamped.*
 
 ### Initial Sensor and Board Housing
