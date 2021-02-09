@@ -45,19 +45,14 @@ SFE_BMP180_2 sensor_2;
 float pressure_offset; // Accounts for offset in absolute pressure measurement between the two sensors.
 
 void setup() {
-  Serial.begin(9600);
-  Serial.println("REBOOT");
+  // Serial.begin(9600);
+  // Serial.println("REBOOT");
 
   // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
   if(!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
-    Serial.println(F("SSD1306 allocation failed"));
+    // Serial.println(F("SSD1306 allocation failed"));
     for(;;); // Don't proceed, loop forever
   }
-
-  // Show initial display buffer contents on the screen --
-  // the library initializes this with an Adafruit splash screen.
-  display.display();
-  delay(500); // Pause for 2 seconds
 
   // Clear the buffer
   display.clearDisplay();
@@ -71,14 +66,14 @@ void setup() {
 
   if (sensor_1.begin())
   {
-    Serial.println("Sensor 1 init success");
+    // Serial.println("Sensor 1 init success");
     display.write("BMP180 1 Initialized\n");
     display.display();
   }
   else
   {
     // Sensor 1 failed to connect.
-    Serial.println("Sensor 1 init fail\n\n");
+    // Serial.println("Sensor 1 init fail\n\n");
     display.write("BMP180 1 Initialized\n");
     display.display();
     while(1); // Pause forever.
@@ -86,14 +81,14 @@ void setup() {
 
   if (sensor_2.begin())
   {
-    Serial.println("Sensor 2 init success");
+    // Serial.println("Sensor 2 init success");
     display.write("BMP180 2 Initialized\n");
     display.display();
   }
   else
   {
     // Sensor 2 failed to connect.
-    Serial.println("Sensor 2 init fail\n\n");
+    // Serial.println("Sensor 2 init fail\n\n");
     display.write("BMP180 1 Initialized\n");
     display.display();
     while(1); // Pause forever.
@@ -101,27 +96,27 @@ void setup() {
 
   // Measure the initial difference in pressure (assuming no airspeed) to get pressure sensor offset.
   pressure_offset = get_pressure(sensor_1) - get_pressure(sensor_2);
-
-  delay(1000);
+  display.write("Pressure Difference\nCalibrated");
+  display.display();
 }
 
 void loop() {
-  Serial.print("Sensor 1 Pressure (mb): ");
-  Serial.println(get_pressure(sensor_1));
-  Serial.print("Sensor 2 Pressure (mb): ");
-  Serial.println(get_pressure(sensor_2));
+  // Serial.print("Sensor 1 Pressure (mb): ");
+  // Serial.println(get_pressure(sensor_1));
+  // Serial.print("Sensor 2 Pressure (mb): ");
+  // Serial.println(get_pressure(sensor_2));
 
   // Calculate difference in pressure in pascals.
   float diff_pressure = 100*(get_pressure(sensor_1) - (get_pressure(sensor_2) + pressure_offset));
   float airspeed = sqrt(2 * abs(diff_pressure) / 1.225);
 
-  Serial.print("Pressure Diff (Pa): ");
-  Serial.println(diff_pressure);
-  Serial.print("Calculated Airspeed (m/s): ");
-  Serial.println(airspeed);
-  Serial.print("Calculated Airspeed (mph): ");
-  Serial.println(airspeed * 2.23694);
-  Serial.println();
+  // Serial.print("Pressure Diff (Pa): ");
+  // Serial.println(diff_pressure);
+  // Serial.print("Calculated Airspeed (m/s): ");
+  // Serial.println(airspeed);
+  // Serial.print("Calculated Airspeed (mph): ");
+  // Serial.println(airspeed * 2.23694);
+  // Serial.println();
 
   display.clearDisplay();
   display.setCursor(0,0);
@@ -131,6 +126,11 @@ void loop() {
   display.setTextSize(2);
   display.println("V (mph): ");
   display.setTextSize(3);
+  if (airspeed * 2.23694 <= 10) {
+    display.print("  ");
+  } else if (airspeed * 2.23694 <= 100) {
+    display.print(" ");
+  }
   display.println(airspeed * 2.23694);
   display.setTextSize(1);
   display.display();
