@@ -1,3 +1,4 @@
+
 # 3D Printed Pitot Static Tube Project
 
 ## Introduction
@@ -21,7 +22,7 @@ This is an on-going project to design and develop an instrument capable of acqui
 	 - [x] Display pressure measurements and air speed reading to OLED display.
  - [ ] Manufacture Components
 	 - [x] 3D print nozzle assembly
-	 - [ ] 3D print housing assembly
+	 - [x] 3D print housing assembly
 	 - [ ] Fasten microcontroller, pressure sensors, and OLED display to housing.
 	 - [ ] Solder and connect wiring.
 	 - [ ] Connect tubing from nozzle assembly to housing assembly.
@@ -64,6 +65,7 @@ To display the recorded pressure difference and resulting air speed measured fro
 The nozzle assembly is designed to be clamped to the roof or out of the window of a car and consists of two parts: the main nozzle and the support.
 
 ![Nozzle Assembly](https://raw.githubusercontent.com/BrandonBNguyen/Pitot-Static-Tube-Project/master/Images/NozzleAssembly.PNG)
+
 *Nozzle assembly featuring tubing running to pressure sensor chambers.*
 
 #### Nozzle
@@ -71,6 +73,7 @@ The nozzle assembly is designed to be clamped to the roof or out of the window o
 The main nozzle has a hole in the front which will be connected to a pressure sensor chamber to measure stagnation pressure, and has a hole on the top which will be connected to a separate pressure sensor chamber to measure static pressure. The underside of the nozzle features a dovetail cutout for a rail from the support to be slotted into.
 
 ![Section View](https://raw.githubusercontent.com/BrandonBNguyen/Pitot-Static-Tube-Project/master/Images/PitotTubeNozzle_Section.PNG)
+
 *Section view of the nozzle showing internal paths to the front and top of the nozzle to measure stagnation pressure and static pressure, respectively.*
 
 ![Underside View](https://raw.githubusercontent.com/BrandonBNguyen/Pitot-Static-Tube-Project/master/Images/PitotTubeNozzle_Underside.PNG)
@@ -85,13 +88,21 @@ The support features a dovetail at one end and a flat edge on the other for whic
 
 *Rear view of the support showing the dovetail rail on top and the flat edge on the bottom to be clamped.*
 
-### Initial Sensor and Board Housing
+### Sensor and Board Housing
+
+#### Initial Design
 
 This initial design for the sensor and board housing was designed for using an Arduino Uno to measure and record readings from the BMP180 sensors and display them via serial output to a computer. Each BMP180 sensor would be housed in its own chamber with wiring passing through a wall between the chamber and the compartment holding the Arduino Uno. A lid with a hole for tubing to each chamber would be fastened to enclose the pressure sensor chambers. Silicone sealant would be used on the wall holding the wiring and between the lid and the housing to ensure an air tight seal for accurate pressure measurements from the two points on the nozzle.
 
  The CAD design for this was created before tests showed that the Arduino Uno would not be suitable for measuring from both sensors simultaneously. **Lesson learned: ensure that all electronic components work together as expected before designing custom parts for those components.** 
 
 ![Initial Board and Sensor Housing Design](https://raw.githubusercontent.com/BrandonBNguyen/Pitot-Static-Tube-Project/master/Images/BoardAndSensorHousing%20v1.PNG)
+
+#### Final Design
+
+The final design features the Teensy LC microcontroller on one side of the housing and the two BMP180 pressure sensors, each in their own housing, on the other side. The lid to cover the microcontroller is embedded with the outward facing OLED display to show the calculated airspeed result from the pressure difference.
+
+![Final Board and Sensor Housing Design](https://raw.githubusercontent.com/BrandonBNguyen/Pitot-Static-Tube-Project/master/Images/BoardAndSensor%20Housing%20v2.PNG)
 
 ## Manufacturing
 
@@ -123,6 +134,15 @@ The [Adafruit SSD1306 library](https://github.com/adafruit/Adafruit_SSD1306), [G
 
 ![Successful test showing calculated airspeed displayed on panel from pressure sensors.](https://github.com/BrandonBNguyen/Pitot-Static-Tube-Project/blob/master/Images/panel_test.gif)
 
+## Attributes
+
+The links to the pre-made models used in the CAD made for this project are linked below.
+
+ - [BMP180 Board](https://grabcad.com/library/bmp180-3) by Karolina Seth
+ - [Arduino Uno R3 Board](https://grabcad.com/library/arduino-uno-r3-1) by Andrew Whitham
+ - [Teensy LC Board](https://grabcad.com/library/teensy-lc-1) by Aron Rubin
+ - [SSD1306 OLED Display](https://grabcad.com/library/display-oled-ssd1306-de-0-96-1) by UNIT ELECTRONICS
+
 ## Skills Demonstrated
 
  - Demonstrated strong computer-aided design skills using SolidWorks in working with multiple parts in assemblies and designing custom parts for electronic components.
@@ -130,3 +150,4 @@ The [Adafruit SSD1306 library](https://github.com/adafruit/Adafruit_SSD1306), [G
 	 - Identified cause for failure of a part to print successfully and implemented  solution to increase build plate adhesion.
 	 - Identified issue with measuring from multiple sensors that share the same I2C address and identified multiple solutions before implementing the best one.
  - Demonstrated knowledge of C++ and applied it to use a microcontroller to read sensor data and display information using I2C protocol.
+
