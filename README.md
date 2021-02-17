@@ -20,13 +20,14 @@ This is an on-going project to design and develop an instrument capable of acqui
 	 - [x] Get pressure readings from single BMP 180
 	 - [x] Get pressure readings from both BMP 180 sensors simultaneously.
 	 - [x] Display pressure measurements and air speed reading to OLED display.
- - [ ] Manufacture Components
+ - [x] Manufacture Components
 	 - [x] 3D print nozzle assembly
 	 - [x] 3D print housing assembly
-	 - [ ] Fasten microcontroller, pressure sensors, and OLED display to housing.
-	 - [ ] Solder and connect wiring.
-	 - [ ] Connect tubing from nozzle assembly to housing assembly.
-	 - [ ] Apply sealant to joints and openings in chamber housing pressure sensors.
+	 - [x] Fasten microcontroller, pressure sensors, and OLED display to housing.
+	 - [x] Solder and connect wiring.
+	 - [x] Connect tubing from nozzle assembly to housing assembly.
+	 - [x] Apply sealant to joints and openings in chamber housing pressure sensors.
+ - [ ] Test and Calibrate
 
 ## Theory
 
