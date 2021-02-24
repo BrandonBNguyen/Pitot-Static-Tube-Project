@@ -27,7 +27,7 @@ This is an on-going project to design and develop an instrument capable of acqui
 	 - [x] Solder and connect wiring.
 	 - [x] Connect tubing from nozzle assembly to housing assembly.
 	 - [x] Apply sealant to joints and openings in chamber housing pressure sensors.
- - [ ] Test and Calibrate
+ - [x] Test and Validate
 
 ## Theory
 
