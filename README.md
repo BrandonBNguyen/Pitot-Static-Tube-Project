@@ -3,7 +3,7 @@
 
 ## Introduction
 
-This is an on-going project to design and develop an instrument capable of acquiring accurate measurements of air speed. 
+The goal of this project was to design and develop an instrument capable of acquiring accurate measurements of air speed. 
 
 ## To Do List
 
