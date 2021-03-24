@@ -59,7 +59,7 @@ To display the recorded pressure difference and resulting air speed measured fro
 
 ![UCTRONICS OLED Module 12864](https://images-na.ssl-images-amazon.com/images/I/51C%2B7ykfGmL._AC_SL1000_.jpg)
 
-## CAD Design
+## CAD Model
 
 ### Nozzle Assembly
 
